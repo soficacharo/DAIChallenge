@@ -2,10 +2,10 @@ import React from 'react';
 import {Image, StyleSheet, Text} from 'react-native';
 
 
-const Card = () => {
+const Card = (props) => {
   return (<div style={styles.card}>
-    <Image source={Imagen} style={styles.img}/>
-    <Text style={styles.text}>{Texto}</Text>
+    <Image source={clickProps.valores.imagen} style={styles.img}/>
+    <Text style={styles.text}>{props.valores.Texto}</Text>
     </div>);
 };
 

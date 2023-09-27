@@ -2,7 +2,7 @@ import {Card} from './Card.jsx';
 
 export function Request() {
 (async () => { 
-    await axios({
+    fetch({
         method: 'get',
         url: 'https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=e7b8481d81cc4dfbb047e0955e432611',
     })
