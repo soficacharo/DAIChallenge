@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { React, useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import Card from "../components/Card";
 import { Input } from 'react-native-elements'
 
 export default function Home() {
     const [text, onChangeText] = useState('')
     const mainInput = useRef()
+
+    
 
     return (<View style={styles.container}>
     <Text style={styles.titulo}>Spoonacular!</Text>

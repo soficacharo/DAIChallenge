@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { React, useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Card from "../components/Card";
+import Platos from '../utils/PlatosContext';
 import { Input } from 'react-native-elements'
 
 export default function Home() {
@@ -24,8 +25,8 @@ export default function Home() {
       <Text>Buscar</Text>
     </Pressable>
   </View>
-  {platos && 
-  platos.map((plato) => (<div>
+  {Platos && 
+  Platos.map((plato) => (<div>
      <Card imagen={plato.image} titulo={plato.title}/></div>))}
   </View>);
 }
