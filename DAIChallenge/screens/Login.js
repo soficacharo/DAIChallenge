@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { React, useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import Card from "../components/Card";
-import Platos from '../utils/PlatosContext';
-import { Input } from 'react-native-elements'
+import Platos, { PlatosProvider, usePlatos } from '../utils/PlatosContext';
+import PlatosDetails from '../utils/PlatosDetails';
+import { Input } from 'react-native-elements';
 
 export default function Home() {
     const [text, onChangeText] = useState('')
@@ -25,10 +25,16 @@ export default function Home() {
       <Text>Buscar</Text>
     </Pressable>
   </View>
+    <PlatosProvider>
+      <PlatosDetails/>
+    </PlatosProvider>
+    {console.log(PlatosDetails)}
   {Platos && 
   Platos.map((plato) => (<div>
      <Card imagen={plato.image} titulo={plato.title}/></div>))}
+   
   </View>);
+  
 }
 
 const styles = StyleSheet.create({

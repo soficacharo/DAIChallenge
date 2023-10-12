@@ -7,6 +7,8 @@ function PlatosDetails(){
     if(!platosData){
         return <div>Loading...</div>
     }
+    
+    return JSON.parse.platosData; //CREO QUE SERIA ASI, hay que importarlo como json 
 }
 
-return platosData; //CREO QUE SERIA ASI, hay que importarlo como json 
+export default PlatosDetails;
