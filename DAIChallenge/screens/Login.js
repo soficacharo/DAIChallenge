@@ -1,11 +1,28 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 import { React, useState, useRef } from 'react';
-import { Input } from 'react-native-elements'
+import { Input } from 'react-native-elements';
+import { useAuth } from '../utils/AuthContext';
 
 export default function Login() {
-    const [text, onChangeText] = useState('')
-    const mainInput = useRef()
+  const [validated, setValidated] = useState(false);
+  const { login, loading } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+    const Logearse = async () => {
+      if(email != '' && password != ''){
+          try {
+              await login(email, password)
+              navigation.navigate('Home')
+          } catch (error) {
+              console.error('Error al iniciar sesión:', error);
+          }
+      }
+      else{
+          alert("Porfavor complete los campos")
+      }
+  }
+ 
     return (<View style={styles.container}>
       <Text style={styles.titulo}>Bienvenido a Spoonacular!</Text>
       <Input
@@ -13,6 +30,7 @@ export default function Login() {
           value={text}
           placeholder="Ingrese su email"
           ref={mainInput}
+          onChangeText={(text) => setEmail(text)}
           style={styles.mainInput}
       />
       <Input
@@ -21,14 +39,14 @@ export default function Login() {
           placeholder="Ingrese su contraseña"
           ref={mainInput}
           style={styles.mainInput}
+      /><TouchableOpacity onPress={Logearse}>
+      <Button
+          title="Iniciar Sesión"
+          disabled={loading}
       />
-      <View style={styles.posicionCentrado} >
-
-      <Pressable style={styles.pressable} /* onPress */>
-        <Text>Enter</Text>
-      </Pressable>
-    </View></View>);
-  
+      </TouchableOpacity>
+  </View>
+)
 }
 
 const styles = StyleSheet.create({

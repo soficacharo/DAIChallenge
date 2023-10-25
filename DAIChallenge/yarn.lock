@@ -2949,7 +2949,7 @@ axios@0.21.1:
 
 axios@^1.5.1:
   version "1.5.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.5.1.tgz#11fbaa11fc35f431193a9564109c88c1f27b585f"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.5.1.tgz"
   integrity sha512-Q28iYCWzNHjAm+yEAot5QaAMxhMghWLFVf7rRdwhUI+c2jix2DUXjAHXVi+s1ibs3mjPO/cCgbA++3BjD0vP/A==
   dependencies:
     follow-redirects "^1.15.0"
@@ -4504,7 +4504,7 @@ expo-asset@~8.10.1:
 
 expo-cli@^6.3.10:
   version "6.3.10"
-  resolved "https://registry.yarnpkg.com/expo-cli/-/expo-cli-6.3.10.tgz#1cdf2bf3bc6ca7b2a8acb5ec97fbffd67d29ab8e"
+  resolved "https://registry.npmjs.org/expo-cli/-/expo-cli-6.3.10.tgz"
   integrity sha512-qe7LOa0UTf/QQmeEtcoom/ujDdANj5XbgCOJuGnB2rGRx+xzReLfLbOrtSfb/2BM3rKHKGmmL940pyUq6f3ncg==
   dependencies:
     "@babel/runtime" "7.9.0"
