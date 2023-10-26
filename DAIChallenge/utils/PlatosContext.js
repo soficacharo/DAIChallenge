@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext, useState, createContext, useContext } from 'react';
+import { useContext, useState, createContext} from 'react';
 const PlatosContext = createContext();
 
 

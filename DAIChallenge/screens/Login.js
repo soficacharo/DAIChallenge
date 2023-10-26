@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Button } from 'react-native';
 import { React, useState, useRef } from 'react';
 import { Input } from 'react-native-elements';
 import { useAuth } from '../utils/AuthContext';
@@ -27,23 +27,21 @@ export default function Login() {
       <Text style={styles.titulo}>Bienvenido a Spoonacular!</Text>
       <Input
         id='email'
-          value={text}
+          value={email}
           placeholder="Ingrese su email"
-          ref={mainInput}
-          onChangeText={(text) => setEmail(text)}
+          
+          onChangeText={(email) => setEmail(email)}
           style={styles.mainInput}
       />
       <Input
         id='contraseña'
-          value={text}
+          value={password}
           placeholder="Ingrese su contraseña"
-          ref={mainInput}
+          
           style={styles.mainInput}
+          onChangeText={(password) => setPassword(password)}
       /><TouchableOpacity onPress={Logearse}>
-      <Button
-          title="Iniciar Sesión"
-          disabled={loading}
-      />
+        <Text>Iniciar Sesión</Text>
       </TouchableOpacity>
   </View>
 )
