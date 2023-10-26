@@ -18,9 +18,9 @@ export function AuthProvider({ children }) {
         setLoading(true);
 
         try {
-            const response = await fakeLogin(email, password); // Simulación de inicio de sesión
+            const response = await fakeLogin(email, password); 
             const token = response.token;
-            // Si la autenticación es exitosa, actualiza el estado del usuario
+          
             setUser({ email, token });
         } catch (error) {
             console.error('Error al iniciar sesión:', error);
@@ -30,7 +30,7 @@ export function AuthProvider({ children }) {
     };
 
     function fakeLogin(email, password) {
-        // Simulación de inicio de sesión
+   
         return new Promise((resolve, reject) => {
             setTimeout(async () => {
                 //http://challenge-react.alkemy.org?email=challenge@alkemy.org&password=react
@@ -44,9 +44,7 @@ export function AuthProvider({ children }) {
 
                     resolve({ token });
 
-                    /* en una aplicación real, el token se genera en el servidor y se envía al cliente */
-                    /* para este ejemplo, el token se genera en el cliente */
-
+              
                 }
                 reject(new Error('Usuario o contraseña incorrectos'));
             }, 1000);
