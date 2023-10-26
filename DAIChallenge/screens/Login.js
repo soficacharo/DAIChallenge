@@ -5,7 +5,7 @@ import { useAuth } from '../utils/AuthContext';
 
 export default function Login() {
   const [validated, setValidated] = useState(false);
-  const { login, loading } = useAuth();
+  const { login, loading } = useAuth('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
